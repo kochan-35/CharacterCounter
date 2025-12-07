@@ -3,28 +3,52 @@
 <html lang="ja">
 
     <head>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>文字数カウンター</title>
+
+        <!-- Tailwind CSS の読み込み -->
+        <script src = "https://cdn.tailwindcss.com"></script>
+
+        <!-- CSS ファイル（style.css）の読み込み -->
+        <link rel = "stylesheet" href = "style.css">
+
     </head>
 
-    <body>
+    <body class = "bg-gray-100 text-gray-800 antialiased">
         
-        <!-- 1. ページの大見出し -->
-        <h1>文字数カウンター</h1>
+        <!-- レイアウトのため -->
+        <div class = "container mx-auto px-4 py-8 md:py-12">
 
-        <!-- 2. 文字数を表示する場所 -->
-        <div>
-            <p>総文字数</p>
-            <span id="total-chars">0</span>
-        </div>
-        
-        <!-- 3. 文章を入力するテキストエリア -->
-        <div>
-            <textarea id="text-input" placeholder="ここに文章を入力してください..."></textarea>
+            <!-- 1. ページの大見出し -->
+            <header class = "text-center mb-8">
+                <h1 class = "text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                    文字数カウンター
+                </h1>
+            </header>
+
+            <!-- メインコンテンツ -->
+            <main class = "max-w-4xl mx-auto">
+
+                <!-- 2. 文字数の表示 -->
+                <div class = "mb-6">
+                    <p>総文字数</p>
+                    <span id = "total-chars" class = "text-3xl font-bold">0</span>
+                </div>
+
+                <!-- 3. テキストエリア（文章入力） -->
+                <div class = "relative rounded-lg p-0.5 bg-gray-300 focus-within:bg-gradient-to-r from-blue-500 to-purple-500 transition duration-300">
+                    <div class = "rounded-md overflow-hidden">
+                        <textarea id = "text-input" class = "w-full h-80 bg-white border-0 p-4 resize-y focus:outline-none placeholder-gray-400 block" placeholder = "ここに文章を入力してください..."></textarea>
+                    </div>
+                </div>
+
+            </main>
+
         </div>
 
-        <!-- 4. JavaScript の取り込み -->
+        <!-- JavaScript の取り込み -->
         <script src = "script.js"></script>
 
     </body>
