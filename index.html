@@ -15,7 +15,7 @@
         <link rel = "stylesheet" href = "style.css">
 
         <!-- アイコンの読み込み -->
-        <link rel="icon" href="images/favicon.ico">
+        <link rel="icon" href="assets/favicon.ico">
 
     </head>
 
@@ -35,9 +35,28 @@
             <main class = "max-w-4xl mx-auto">
 
                 <!-- 2. 文字数の表示 -->
-                <div class = "mb-4">
-                    <p>総文字数</p>
-                    <span id = "total-chars" class = "text-3xl font-bold">0</span>
+                <div class = "flex justify-between items-end mb-4">
+
+                    <!-- 総文字数の表示 -->
+                    <div>
+                        <p class = "text-gray-500 text-sm">総文字数</p>
+                        <span id = "total-chars" class = "text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">0</span>
+                    </div>
+
+                    <div class = "flex gap-3">
+
+                        <!-- クリアボタン -->
+                        <button id = "clear-btn" title="クリア" class = "bg-gray-200 hover:bg-gradient-to-r hover:from-red-500 hover:to-orange-500 text-gray-700 hover:text-white font-bold p-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <img src = "assets/clear-icon.svg" alt = "クリア" class = "h-6 w-6">
+                        </button>
+
+                        <!-- コピーボタン -->
+                        <button id = "copy-btn" title = "コピー" class = "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white font-bold p-3 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                            <img src = "assets/copy-icon.svg" alt = "コピー" class = "h-6 w-6">
+                        </button>
+
+                    </div>
+
                 </div>
 
                 <!-- 3. テキストエリア（文章入力） -->
