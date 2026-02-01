@@ -4,6 +4,8 @@ const totalCharsEl = document.getElementById('total-chars'); // 文字数
 const charsEl = document.getElementById('chars'); // 文字数（空白・改行を除く）
 const wordsEl = document.getElementById('words'); // 単語数
 const paragraphsEl = document.getElementById('paragraphs'); // 段落数
+const clearBtn = document.getElementById('clear-btn'); // クリアボタン
+const copyBtn = document.getElementById('copy-btn'); // コピーボタン
 
 // 2. 文字数を数えて表示を更新する関数
 const updateCounter = () => {
@@ -28,5 +30,26 @@ const updateCounter = () => {
 
 };
 
-// 3. 入力がある => 上の関数を実行
+// 3. テキストを消去する関数
+const clearText = () => {
+    textInput.value = '';
+    updateCounter();
+};
+
+// 4. テキストをコピーする関数
+const copyText = () => {
+
+    // 未入力時はコピーしない
+    if( textInput.value === '' ) return;
+
+    // 文字を選択 => ブラウザのコピー機能を実行
+    textInput.select();
+    document.execCommand('copy');
+
+    // alert('Copied!');
+};
+
+// 5. イベントの設定
 textInput.addEventListener('input', updateCounter);
+clearBtn.addEventListener('click', clearText);
+copyBtn.addEventListener('click', copyText);
