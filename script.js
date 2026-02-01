@@ -6,6 +6,9 @@ const wordsEl = document.getElementById('words'); // 単語数
 const paragraphsEl = document.getElementById('paragraphs'); // 段落数
 const clearBtn = document.getElementById('clear-btn'); // クリアボタン
 const copyBtn = document.getElementById('copy-btn'); // コピーボタン
+const messageBox = document.getElementById('message-box'); // コピー完了時のメッセージ
+const originCopyIcon = copyBtn.innerHTML; // ボタンのアイコン（戻すとき用）
+const copiedIcon = '<img src = "assets/check-icon.svg" alt = "成功" class = "h-6 w-6">'; // コピー成功時のアイコン（チェックマーク）
 
 // 2. 文字数を数えて表示を更新する関数
 const updateCounter = () => {
@@ -46,7 +49,26 @@ const copyText = () => {
     textInput.select();
     document.execCommand('copy');
 
-    // alert('Copied!');
+    // A. メッセージを表示
+    messageBox.classList.remove('opacity-0');
+
+    // B. 「チェック」+「緑」に変更
+    copyBtn.innerHTML = `${copiedIcon}`;
+    copyBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+    
+    // C. 1秒後にもとに戻す
+    setTimeout( () => {
+
+        // メッセージを消す
+        messageBox.classList.add('opacity-0');
+
+        // もとに戻す
+        copyBtn.innerHTML = originCopyIcon;
+        copyBtn.classList.add('bg-blue-500', 'hover:gb-blue-600');
+        copyBtn.classList.remove('bg-green-500', 'hover:bg-green-600');
+
+    }, 1000 );
+
 };
 
 // 5. イベントの設定
