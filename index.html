@@ -20,21 +20,19 @@
     </head>
 
     <body class = "bg-gray-100 text-gray-800 antialiased">
-        
-        <!-- レイアウトのため -->
-        <div class = "container mx-auto px-4 py-6 md:py-10">
 
-            <!-- 1. ページの大見出し -->
-            <header class = "text-center mb-6">
-                <h1 class = "text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
-                    文字数カウンター
-                </h1>
-            </header>
+        <div class = "container mx-auto px-4 py-6 md:py-10">           
 
-            <!-- メインコンテンツ -->
             <main class = "max-w-4xl mx-auto">
 
-                <!-- 2. 文字数の表示 -->
+                <!-- 1. ヘッダー -->
+                <header class = "text-center">
+                    <h1 class = "text-2xl md:text-3xl font-black bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">
+                        文字数カウンター
+                    </h1>
+                </header>
+
+                <!-- 2. メインコンテンツ -->
                 <div class = "flex justify-between items-end mb-4">
 
                     <!-- 総文字数の表示 -->
@@ -43,6 +41,7 @@
                         <span id = "total-chars" class = "text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">0</span>
                     </div>
 
+                    <!-- ボタンたち -->
                     <div class = "flex gap-3">
 
                         <!-- クリアボタン -->
@@ -69,19 +68,19 @@
                 <!-- 4. サブコンテンツ -->
                 <div id = "sub-counters" class = "flex justify-center items-center gap-8 mt-4 text-gray-500">
 
-                    <!-- 4.1. 空白・改行を除いた文字数の表示 -->
+                    <!-- 空白・改行を除いた文字数の表示 -->
                     <div class = "text-center">
                         <span class = "font-bold text-xl text-gray-700" id = "chars">0</span>
                         <p class = "text-xs">空白除く</p>
                     </div>
 
-                    <!-- 4.2. 単語数 -->
+                    <!-- 単語数 -->
                     <div class = "text-center">
                         <span class = "font-bold text-xl text-gray-700" id = "words">0</span>
                         <p class = "text-xs">単語数</p>
                     </div>
 
-                    <!-- 4.3. 段落数 -->
+                    <!-- 段落数 -->
                     <div class = "text-center">
                         <span class = "font-bold text-xl text-gray-700" id = "paragraphs">0</span>
                         <p class = "text-xs">段落数</p>
